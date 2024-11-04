@@ -1,0 +1,471 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+ /* Full-screen container for diagonal animation */
+ .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  pointer-events: none; /* Disable interaction */
+}
+
+/* Text style */
+.moving-text {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0091ff;
+  animation: diagonalMove 10s linear infinite;
+}
+
+/* Diagonal Animation */
+@keyframes diagonalMove {
+  from {
+    top: 0;
+    left: 0;
+  }
+  to {
+    top: 100%;
+    left: 100%;
+  }
+}
+
+.original {
+  display: block;
+  font-size: medium;
+  color: crimson;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto; /* Ensure clicking is enabled */
+}
+
+
+
+/* Body and Font */
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Soft background to create a clean look */
+  color: #333; /* Neutral color for easy readability */
+}
+/* General Navigation Bar Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333; /* Navigation background */
+}
+
+/* Portfolio Link (Left-Aligned) */
+.portfolio-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f39c12; /* Custom color for the Portfolio link */
+  text-decoration: none;
+  margin-right: auto; /* Push Portfolio to the left */
+}
+
+.portfolio-link:hover {
+  color: #e67e22; /* Hover effect for the Portfolio link */
+}
+
+/* Navigation Menu Items */
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Adds space between menu items */
+}
+
+ul li {
+  margin: 0;
+}
+
+ul li a {
+  font-size: 1.1rem;
+  color: #ffffff; /* Menu item color */
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #f39c12; /* Hover effect for other menu items */
+}
+
+/* Responsive: Align vertically on smaller screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .portfolio-link {
+    margin-bottom: 10px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/bg.png") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.hero h1 span {
+  color: #f39c12; /* Accent color for emphasis */
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.cta {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #f39c12;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #e67e22; /* Hover color change */
+}
+
+/* About Section */
+.about {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Projects Section */
+.projects {
+  background-color: #f4f4f4;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.project-item {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for clean design */
+}
+
+.project-item h3 {
+  font-size: 1.8rem;
+  color: #00d54b;
+  margin-bottom: 15px;
+}
+
+.project-item p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center; /* Center align the text */
+  }
+  
+  .skills h2 {
+    font-size: 2.5rem; /* Heading size */
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .skill {
+    margin-bottom: 20px;
+  }
+  
+  /* Progress Bar Styling */
+  .progress-bar {
+    background-color: #e0e0e0; /* Gray background for the progress bar */
+    border-radius: 25px;
+    overflow: hidden;
+    height: 25px; /* Keep the original height */
+    margin: 0 auto 20px auto; /* Center the progress bar and add bottom margin */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    width: 50%; /* Reduced width to 50% */
+  }
+  
+  .progress {
+    background-color: #3498db; /* Blue color for the progress */
+    height: 100%; /* Fill height of the progress bar */
+    text-align: right;
+    padding-right: 10px; /* Adjusted padding for text */
+    color: #fff; /* White text color */
+    line-height: 25px; /* Keep line height for vertical alignment */
+    font-size: 1rem; /* Font size for percentage */
+    font-weight: bold;
+    border-radius: 25px 0 0 25px;
+    transition: width 0.3s ease-in-out; /* Smooth animation for progress */
+  }
+  
+  /* Responsive: Adjust progress bar sizes for smaller screens */
+  @media (max-width: 768px) {
+    .skills h2 {
+      font-size: 2rem; /* Adjusted heading size for mobile */
+    }
+  
+    .progress-bar {
+      width: 80%; /* Adjusted width for mobile */
+    }
+  
+    .progress {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+  }
+  
+
+/* Tools Section */
+.tools {
+  background-color: #f4f4f4;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.tools h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.tools ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tools li {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tools li:hover {
+  background-color: #f39c12;
+  color: #fff;
+}
+
+
+
+/* Contact Section */
+.contact {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* Layout for contact details and form */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-details {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-details h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-details li {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.contact-details a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  color: #e67e22;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  flex: 2;
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #f39c12;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e67e22;
+  background-color: #ffffff;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn-submit {
+  background-color: #f39c12;
+  color: #ffffff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #e67e22;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #242526;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Media Queries (Responsive Design) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+  }
+}
+
+
